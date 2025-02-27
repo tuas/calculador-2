@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #e9f5fb; /* Fondo claro y suave */
+    background-color: #f0f4f8; /* Fondo claro y suave */
     margin: 0;
     padding: 20px;
 }
@@ -34,3 +34,16 @@ input {
     padding: 10px;
     margin-bottom: 20px;
     border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: border-color 0.3s; /* Transición suave para el borde */
+}
+
+input:focus {
+    border-color: #007bff; /* Color del borde al enfocarse */
+    outline: none; /* Eliminar el contorno por defecto */
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
