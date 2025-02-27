@@ -5,10 +5,19 @@ document.getElementById('costCalculator').addEventListener('submit', function(ev
     const weight = parseFloat(document.getElementById('weight').value);
     const time = parseFloat(document.getElementById('time').value);
     const hourlyRate = parseFloat(document.getElementById('hourlyRate').value);
+    const wearAndTear = parseFloat(document.getElementById('wearAndTear').value);
+    const electricityCost = parseFloat(document.getElementById('electricityCost').value);
+    const consumption = parseFloat(document.getElementById('consumption').value);
+    const profitMargin = parseFloat(document.getElementById('profitMargin').value) / 100;
 
     const materialTotal = materialCost * weight;
     const laborTotal = hourlyRate * time;
-    const totalCost = materialTotal + laborTotal;
+    const wearAndTearTotal = wearAndTear * time;
+    const electricityTotal = electricityCost * consumption * time;
 
-    document.getElementById('totalCost').innerText = `Costo Total: $${totalCost.toFixed(2)}`;
+    const totalCost = materialTotal + laborTotal + wearAndTearTotal + electricityTotal;
+    const profit = totalCost * profitMargin;
+    const finalCost = totalCost + profit;
+
+    document.getElementById('totalCost').innerText = `Costo Total: $${finalCost.toFixed(2)}`;
 });
